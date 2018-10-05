@@ -1,7 +1,7 @@
 {
   "name": "color-palette-sass",
   "version": "1.0.0",
-  "description": "Exercise to create a color palette",
+  "description": "Exercise to create a color palette using sass and parcel",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "start": "rimraf dist && parcel ./src/index.html --open"
   },
   "keywords": [],
-  "author": "",
+  "author": "Pedro Jesús Romero Ortega",
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^4.9.3",
