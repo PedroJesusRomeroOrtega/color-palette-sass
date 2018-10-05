@@ -1,0 +1,33 @@
+@mixin colorPalette($color, $numGeneratedColors: 4) {
+  //  $numDarkColors: floor(($numColors - 1) / 2);
+  //  $numLightColors: ($numColors - 1) - $numDarkColors;
+
+  //darken
+  @for $num from 1 through $numGeneratedColors {
+    .color_darknes_#{$num} {
+      background-color: darken(
+        $color,
+        calculatePercentage($num, $numGeneratedColors)
+      );
+    }
+  }
+  //basecolor
+  .color {
+    background-color: $color;
+  }
+  //lighten
+  @for $num from 1 through $numGeneratedColors {
+    .color_lighten_#{$num} {
+      background-color: lighten(
+        $color,
+        calculatePercentage($num, $numGeneratedColors)
+      );
+    }
+  }
+}
+
+@function calculatePercentage($cont, $totalNumber) {
+  $percent: $cont / $totalNumber;
+  $base: ($percent * 40) / 100; //because lighter or darkner than 40% always be white or black
+  @return percentage($base);
+}
